@@ -1,0 +1,52 @@
+﻿<Window x:Class="FEAPP.ImageViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FEAPP"
+        mc:Ignorable="d"
+        Title="ImageViewer"
+        ResizeMode="NoResize"
+        WindowState="Maximized" 
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        Height="{Binding SystemParameters.PrimaryScreenHeight}"
+        Width="{Binding SystemParameters.PrimaryScreenWidth}">
+    <Grid>
+        <local:ZoomBorder x:Name="border" ClipToBounds="True" Background="Gray">
+        <Image Name="imageViwerOption"></Image>
+        </local:ZoomBorder>
+        <TextBlock x:Name="viewerLocation" Visibility="Hidden"  Padding="0,0,0,450" Foreground="White" HorizontalAlignment="Center" TextWrapping="Wrap" Text="" VerticalAlignment="Center" FontSize="35" FontWeight="Bold" />
+        
+        <Button Content="Rotate" FontFamily="Georgia" FontSize="12" Foreground="Maroon"
+
+                Height="26" HorizontalAlignment="Left" Margin="410,61,0,0"
+
+                Name="RotateButton" VerticalAlignment="Top" Width="56" Click="RotateButton_Click" />
+
+        <ComboBox Height="30" HorizontalAlignment="Right" Margin="300,57,12,0" Name="RotationList"
+
+                  VerticalAlignment="Top" Width="68" SelectedIndex="0">
+
+            <ComboBoxItem Content="Rotate0" ContentStringFormat="Rotate0" />
+
+            <ComboBoxItem Content="Rotate90" ContentStringFormat="Rotate90" />
+
+            <ComboBoxItem Content="Rotate180" ContentStringFormat="Rotate180" />
+
+            <ComboBoxItem Content="Rotate270" ContentStringFormat="Rotate270" />
+
+        </ComboBox>
+        <Button Content="ZoomIn" FontFamily="Georgia" FontSize="12" Foreground="Maroon"
+
+                Height="26" HorizontalAlignment="Left" Margin="310,61,0,0"
+
+                Name="ZoomInButton" VerticalAlignment="Top" Width="56" Click="ZoomInButton_Click" />
+        <Button Content="ZoomOut" FontFamily="Georgia" FontSize="12" Foreground="Maroon"
+
+                Height="26" HorizontalAlignment="Left" Margin="200,61,0,0"
+
+                Name="ZoomOutButton" VerticalAlignment="Top" Width="56" Click="ZoomButton_Click"/>
+
+    </Grid>
+</Window>

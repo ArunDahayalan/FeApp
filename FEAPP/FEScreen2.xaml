@@ -1,0 +1,75 @@
+﻿<UserControl x:Class="FEAPP.FEScreen2"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             Height="{Binding SystemParameters.PrimaryScreenHeight}"
+             Width="{Binding SystemParameters.PrimaryScreenWidth}" Loaded="UserControl_Loaded"
+             Name="MainPnl">
+    <Grid Name="MainGrid">
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Image HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,5,0,0" Width="157" Height="100" />
+            <TextBlock Text="FILE EXPLORER APPLICATION" Padding="0,20,0,0" Foreground="White" FontSize="23" VerticalAlignment="Top" HorizontalAlignment="Center" FontWeight="Bold"/>
+            
+            <TextBlock HorizontalAlignment="Right" Padding="0, 20,20,0" VerticalAlignment="Top" FontSize="22px" Name="RoleName" Text="" Foreground="white"></TextBlock>
+            <TextBlock HorizontalAlignment="Right" Padding="0, 50,20,0" VerticalAlignment="Top" FontSize="22px" Name="PartName" Text="" Foreground="white"></TextBlock>
+            <TextBox Visibility="Hidden" Text="" x:Name="partValue"></TextBox>
+            <TextBox Visibility="Hidden" Text="" x:Name="roleValue"></TextBox>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0">
+            <ItemsControl Name="icBtns">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate >
+                        <UniformGrid Margin="100,100,100,0" Columns="2" Rows="{Binding RowCount}">
+                        </UniformGrid>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid VerticalAlignment="Center">
+                            <Button Grid.Row="{Binding Row}" Grid.Column="{Binding Column}" Content="{Binding Title}" Tag="{Binding Tag}" Cursor="Hand" x:Name="videoButton" Click="btn_clicked"   HorizontalAlignment="Center" VerticalAlignment="Top" Width="400" BorderBrush="Transparent" Foreground="Black"  FontSize="24" MinHeight="64">
+                                <Button.Resources>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="CornerRadius" Value="10"/>
+                                        <Setter Property="Background" Value="White"/>
+                                    </Style>
+                                </Button.Resources>
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="Background" Value="White"/>
+                                        <Setter Property="FontWeight" Value="bold"></Setter>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type Button}">
+                                                    <Border Background="{TemplateBinding Background}">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    </Border>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="White"/>
+                                                <Setter Property="Effect">
+                                                    <Setter.Value>
+                                                        <DropShadowEffect BlurRadius="50" Color="White" ShadowDepth="0" />
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="0">
+            <TextBlock Cursor="Hand" PreviewMouseDown="BackButton_PreviewMouseDown" VerticalAlignment="Bottom" Width="124" Height="110" x:Name="Back4Button" Margin="0,0,30,40" HorizontalAlignment="Right"><InlineUIContainer>
+                		<Image Width="120" Height="120"  x:Name="myImg" Source="images\homebutton1.png" Margin="5"/>
+                	</InlineUIContainer>
+            </TextBlock>
+        </Grid>
+    </Grid>
+</UserControl>
