@@ -1,0 +1,37 @@
+General information for the business: advertising
+Kind of development: New program from scratch
+Num. of modules: 6
+Description of every module: Simple app for marketing is required . 
+
+user side: user should be able to see adds 
+Admin : should be able to add adds
+
+more features would be added . my budget is $150
+
+it is an app
+Description of requirements/functionality: Simple app for marketing is required . 
+
+user side: user should be able to see adds 
+Admin : should be able to add adds
+
+more features would be added . my budget is $150
+Extra notes: 
+
+General information for the business: advertising
+Kind of development: New program from scratch
+Num. of modules: 6
+Description of every module: Simple app for marketing is required . 
+
+user side: user should be able to see adds 
+Admin : should be able to add adds
+
+more features would be added . my budget is $150
+
+it is an app
+Description of requirements/functionality: Simple app for marketing is required . 
+
+user side: user should be able to see adds 
+Admin : should be able to add adds
+
+more features would be added . my budget is $150
+Extra notes: 
